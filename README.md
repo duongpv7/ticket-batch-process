@@ -55,6 +55,10 @@ We assume that the Ticket table has the ID field as the primary key, which is an
 
 We use a table `batchprogress` to keep track of the state of the batch process and the last ID of the record successfully processed.
 
+*The sample project demonstrates how we process a large dataset using Django queryset, so we don’t focus on the logic of token generation.*
+
+*For testing purposes, the database credentials (user, password, etc.) are also hardcoded. In a real development environment, these should be stored in a .env file*
+
 ## Implementation
 
 There are two main management commands: `init` and `process-token`, located at `src/app/management/commands/ticket.py`
