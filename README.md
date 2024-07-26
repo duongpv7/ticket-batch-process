@@ -19,7 +19,7 @@ Finally, the script should ensure that if it is interrupted, it saves progress a
 
 2. Access the `app` container
     ```bash
-    docker-compose exec app bash
+    docker exec -it app /bin/bash
     ```
 
 3. Migrate the database
