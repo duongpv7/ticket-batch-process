@@ -1,3 +1,5 @@
+from uuid import uuid4
+
 from django.db import models
 
 
@@ -15,3 +17,6 @@ class BatchProgress(models.Model):
 
 class Ticket(models.Model):
     token = models.UUIDField(null=True, default=None)
+
+    def generate_token(self):
+        self.token = self.token or uuid4()

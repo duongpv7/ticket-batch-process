@@ -1,5 +1,4 @@
 import time
-from uuid import uuid4
 
 from django.core.management.base import BaseCommand
 from django.db import connection
@@ -75,7 +74,7 @@ class Command(BaseCommand):
         last_pk = None
         bulk = []
         for item in chunk:
-            item.token = item.token or uuid4()
+            item.generate_token()
             bulk.append(item)
 
             last_pk = item.id
