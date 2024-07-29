@@ -17,6 +17,8 @@ Finally, the script should ensure that if it is interrupted, it saves progress a
     docker-compose up -d --build
     ```
 
+    *Note: We should stop any service running on port 8000 and port 5432 (PostgreSQL database) to avoid build failures.*
+
 2. Access the `app` container
     ```bash
     docker exec -it app /bin/bash
