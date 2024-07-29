@@ -19,7 +19,7 @@ Finally, the script should ensure that if it is interrupted, it saves progress a
 
 2. Access the `app` container
     ```bash
-    docker-compose exec app bash
+    docker exec -it app /bin/bash
     ```
 
 3. Migrate the database
@@ -54,6 +54,10 @@ Finally, the script should ensure that if it is interrupted, it saves progress a
 We assume that the Ticket table has the ID field as the primary key, which is an auto-increment number.
 
 We use a table `batchprogress` to keep track of the state of the batch process and the last ID of the record successfully processed.
+
+*The sample project demonstrates how we process a large dataset using Django queryset, so we don’t focus on the logic of token generation.*
+
+*For testing purposes, the database credentials (user, password, etc.) are also hardcoded. In a real development environment, these should be stored in a .env file*
 
 ## Implementation
 
